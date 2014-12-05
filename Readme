@@ -1,4 +1,31 @@
-RB
-==
+MIS_Club_Check_In
+=================
 
-Project Files go here
+This is a check-in system designed for use by the ISU MIS Club. This system allows members to enter their net-ID before our weekly meetings so that we can track attendance, and track whether or not dues have been paid. 
+
+Once the system is running, members will type their ISU net-ID into a gui. Using their net-ID, we then scrape info.iastate.edu to gather some information such as the member's name, major, and classification. Member check-ins are stored in an SQLite3 database. We can use this data to track attendance, and track whether or not dues have been paid. 
+
+-----------------
+
+Checkin_To_Event.py - This file is deprecated and no longer used in the system, but does show part of the original process that was designed.
+
+Create_Event_GUI.py
+This file holds the class that holds the presentation logic for the creation of events. This should only be used by MIS Clb executive members.
+
+Create Create_Member_GUI.py
+This file holds all of the presentation logic and a bit of data access logic for the part of the system our users see.
+
+Info_IaState_Scraper.py
+This file contains the functions that gather data from Info.Iastate such as the name and major associated with a member's ISU net-ID
+
+MIS_Database_Functions.py
+This file contains some functions that ease the process of getting and setting attributes from the tables in the SQLite Database.
+
+Main_GUI.py
+This file is the program we run to actually use the system. It makes calls to the other two used GUI files (Create_Event_GUI.py, Create_Member_GUI.py) either for event creation or member check in.
+
+import_old.py
+This was a script that was written to import the data from a .csv export from the old MIS Club database.
+
+stuorg_misclub.sql
+This file is the old MySQL database the old check-in system (Java) used.
